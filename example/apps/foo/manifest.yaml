@@ -7,6 +7,7 @@ metadata:
   name: app2
   namespace: argo-dev
 spec:
+  project: default
   destination:
     namespace: argo-dev
     server: https://kubernetes.default.svc
