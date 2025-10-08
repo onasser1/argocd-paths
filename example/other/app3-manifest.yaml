@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app3
+  namespace: argo-dev
+spec:
+  source:
+    repoURL: hhttps://github.com/onasser1/argocd-paths.git
+    targetRevision: HEAD
+    path: example/other
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      enabled: true
