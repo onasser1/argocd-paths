@@ -3,8 +3,8 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/manifest-generate-paths: .;..
-    argocd.argoproj.io/tracking-id: app1:argoproj.io/Application:argo-dev/app5
-  name: app5
+    argocd.argoproj.io/tracking-id: app1:argoproj.io/Application:argo-dev/app-from-file
+  name: app-from-file
   namespace: argo-dev
 spec:
   destination:
