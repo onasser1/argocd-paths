@@ -1,6 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: nginx-app
   namespace: argocd-e2e
   finalizers:
     - resources-finalizer.argocd.argoproj.io
