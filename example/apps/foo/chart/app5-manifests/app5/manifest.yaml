@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: .;..
+    argocd.argoproj.io/tracking-id: app1:argoproj.io/Application:argo-dev/app5
+  name: app5
+  namespace: argo-dev
+spec:
+  destination:
+    namespace: argo-dev
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: example/apps/foo/chart/app5-manifests/app5
+    repoURL: hhttps://github.com/onasser1/argocd-paths.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
